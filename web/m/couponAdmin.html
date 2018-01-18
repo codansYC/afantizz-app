@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LikingFit烟台鲁大店-优惠券管理页</title>
+    <link rel="Shortcut Icon" href="/images/liking.png"/>
+    <link rel="stylesheet" href="/m/bootstrap/bootstrap.css">
+    <script src="/common/jquery-3.1.1.min.js"></script>
+    <script src="/m/bootstrap/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/m/css/common.css">
+    <link rel="stylesheet" href="/m/css/layout.css">
+    <script src="/m/js/common.js"></script>
+    <script src="/m/js/layout.js"></script>
+    <style type="text/css">
+        select{
+            border: #34c86c solid 1px;
+            background-color: transparent;
+            outline: none;
+        }
+        .top{
+            position: fixed;
+            background-color: white;
+            padding-bottom: 10px;
+            border-bottom: #34c86c solid 2px;
+            width: 480px;
+        }
+        .phase{
+            line-height: 50px;
+        }
+        .amount{
+            line-height: 50px;
+        }
+        .amount ul{
+            list-style: none;
+        }
+        .amount ul li {
+            float: left;
+            margin-right: 20px;
+        }
+        .search input{
+            display: inline-block;
+            outline: none;
+            border: #34c86c solid 1px;
+            width: 200px;
+            height: 34px;
+            padding-left: 7px;
+        }
+        .search a{
+            display: inline-block;
+            margin-left: 20px;
+        }
+        .content{
+            margin-top: 170px;
+            width: 440px;
+        }
+        .content ul{
+            list-style: none;
+        }
+        .content ul li{
+            border-bottom: #edeff3 solid 1px ;
+            padding-top: 15px;
+            padding-bottom: 5px;
+            /*position: relative;*/
+        }
+        .phone{
+            color: #596167;
+        }
+        .employee{
+            color: #888b9a;
+            font-size: 13px;
+        }
+        .price{
+            font-size: 17px;
+            padding-left: 30px;
+            line-height: 40px;
+            color: rgb(229,140,127);
+        }
+        .content ul li .action{
+            line-height: 50px;
+            height: 50px;
+            padding-right: 100px;
+        }
+        .content ul li a{
+            display: inline-block;
+            line-height: 50px;
+            height: 50px;
+        }
+        .content ul li p{
+            line-height: 15px;
+            margin-bottom: 10px;
+        }
+        /*.line{*/
+            /*height: 1px;*/
+            /*color: #edeff3;*/
+        /*}*/
+
+    </style>
+    <script>
+        var selectedPhase = 1
+        $(function () {
+            var allCoupons = new Array()
+            var unuseCoupons = new Array()
+            var usedCoupons = new Array()
+
+            //
+            $('#phase-select').change(function () {
+                selectedPhase = $(this).children('option:selected').val()
+//                $('.phase select option').removeProp('selected')
+                handleAmount()
+                addCouponList(allCoupons)
+            })
+
+            //请求
+//            var url = 'http://localhost:8000/likingfit/coupon-list'
+            var url = 'http://afantizz.com/likingfit/coupon-list'
+            request(url,{},function (resp) {
+                clearData()
+                allCoupons = resp
+                for (var i=0; i<resp.length;i++) {
+                    var coupon = resp[i]
+                    if (coupon.coupon_state == 1) {
+                        unuseCoupons.push(coupon)
+                    } else {
+                        usedCoupons.push(coupon)
+                    }
+                }
+                handleAmount()
+                addCouponList(resp)
+            })
+
+            function clearData() {
+                allCoupons.pop()
+                unuseCoupons.pop()
+                usedCoupons.pop()
+            }
+
+            function addCoupon(coupon) {
+                var ul = $('.content ul')
+                var li = $("<li class='clearfix'></li>")
+                ul.append(li)
+                var div1 = $("<div class='pull-left'></div>")
+                var divPrice = $("<div class='pull-left price'>"+coupon.price+"<span>元</span></div>")
+                var div2 = $("<div class='action pull-right'></div>")
+                li.append(div1)
+                li.append(divPrice)
+                li.append(div2)
+
+
+                var p1 = $("<p class='name'></p>")
+                p1.text(coupon.name)
+                var p2 = $("<p class='phone'></p>")
+                p2.text(coupon.phone)
+                div1.append(p1)
+                div1.append(p2)
+                if (coupon.eid != null && coupon.eid != '') {
+                    var p3 = $("<p class='employee'><span>来自: </span>"+coupon.eid+"</p>")
+                    div1.append(p3)
+                }
+                if (coupon.coupon_state == 1) {
+                    var a = $("<a href='javascript:'>兑换</a>")
+                    div2.append(a)
+                    a.click(function () {
+                        useCoupon(coupon.id,function () {
+                            a.remove()
+                            coupon.coupon_state == 0
+                            handleDataAfterUseCoupon(coupon.id)
+                            handleAmount()
+                        })
+                    })
+                }
+
+            }
+
+            function useCoupon(id,complete) {
+//                var url = 'http://localhost:8000/likingfit/use-coupon'
+                var url = 'http://afantizz.com/likingfit/use-coupon'
+                var params = {
+                    id: id
+                }
+                request(url,params,function () {
+                    showModel('兑换成功',function () {
+                        complete()
+//                        location.reload()
+                    },1000)
+                })
+            }
+
+            function handleDataAfterUseCoupon(id) {
+                unuseCoupons.pop()
+                usedCoupons.pop()
+                for (var i=0; i<allCoupons.length;i++) {
+                    if (allCoupons[i].id == id) {
+                        allCoupons[i].coupon_state = 0
+                    }
+                    if (allCoupons[i].coupon_state == 1) {
+                        unuseCoupons.push(allCoupons[i])
+                    } else {
+                        usedCoupons.push(allCoupons[i])
+                    }
+                }
+            }
+
+            $('.all').click(function () {
+                $('input').val('')
+                addCouponList(allCoupons)
+            })
+            $('.used').click(function () {
+                $('input').val('')
+                addCouponList(usedCoupons)
+            })
+            $('.unused').click(function () {
+                $('input').val('')
+                addCouponList(unuseCoupons)
+            })
+            $('.refresh').click(function () {
+                location.reload()
+            })
+
+            function addCouponList(coupons) {
+                $('.content ul li').remove()
+                for (var i=0;i<coupons.length;i++) {
+                    var coupon = coupons[i]
+                    if (coupon.phase == selectedPhase) {
+                        addCoupon(coupons[i])
+                    }
+                }
+            }
+
+            function handleAmount() {
+                var phase_allCoupons_count = 0
+                var phase_usedCoupons_count = 0
+                var phase_unuseCoupons_count = 0
+                for (var i=0; i<allCoupons.length; i++) {
+                    var coupon = allCoupons[i]
+                    if (coupon.phase == selectedPhase) {
+                        phase_allCoupons_count++
+                        if (coupon.coupon_state == 1) {
+                            phase_unuseCoupons_count++
+                        } else {
+                            phase_usedCoupons_count++
+                        }
+                    }
+                }
+                $(".amount .all").text("总数量: "+phase_allCoupons_count)
+                $(".amount .used").text("已兑换: "+phase_usedCoupons_count)
+                $(".amount .unused").text("未兑换: "+phase_unuseCoupons_count)
+            }
+
+            //搜索
+            $('input').bind('input propertychange',function () {
+
+                var searchCoupons = new Array()
+                var tx = $('input').val()
+                for (var i=0;i<allCoupons.length;i++){
+                    var coupon = allCoupons[i]
+                    if (coupon.phone.indexOf(tx) > -1) {
+                        searchCoupons.push(coupon)
+                    }
+                }
+                addCouponList(searchCoupons)
+            })
+
+        })
+    </script>
+</head>
+<body>
+
+<div class="container">
+    <div class="top">
+        <div class="phase">
+            <select name="" id="phase-select">
+                <option value="1">第一期</option>
+                <option value="2">第二期</option>
+            </select>
+        </div>
+        <div class="amount clearfix">
+            <ul>
+                <li class="all">总数量:</li>
+                <li class="used">已兑换:</li>
+                <li class="unused">未兑换:</li>
+            </ul>
+        </div>
+        <div class="search">
+            <input type="text" placeholder="输入手机号">
+            <a class="all" href="javascript:">全部</a>
+            <a class="used" href="javascript:">已兑换</a>
+            <a class="unused" href="javascript:">未兑换</a>
+            <a class="refresh" href="javascript:">刷新</a>
+        </div>
+    </div>
+    <div class="content">
+        <ul>
+            <!--<li class="clearfix">-->
+                <!--<div class="pull-left">-->
+                    <!--<p class="name">袁超</p>-->
+                    <!--<p class="phone">15801569925</p>-->
+                <!--</div>-->
+                <!--<div class="action pull-right">-->
+                    <!--<a href="javascript:">兑换</a>-->
+                <!--</div>-->
+            <!--</li>-->
+        </ul>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LikingFit烟台鲁大店-体验卡管理页</title>
+    <link rel="Shortcut Icon" href="/images/liking.png"/>
+    <link rel="stylesheet" href="/m/bootstrap/bootstrap.css">
+    <script src="/common/jquery-3.1.1.min.js"></script>
+    <script src="/m/bootstrap/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/m/css/common.css">
+    <link rel="stylesheet" href="/m/css/layout.css">
+    <script src="/m/js/common.js"></script>
+    <script src="/m/js/layout.js"></script>
+    <style type="text/css">
+        select{
+            border: #34c86c solid 1px;
+            background-color: transparent;
+            outline: none;
+        }
+        .top{
+            position: fixed;
+            background-color: white;
+            padding-bottom: 10px;
+            border-bottom: #34c86c solid 2px;
+            width: 480px;
+        }
+
+        .amount{
+            line-height: 50px;
+        }
+        .amount ul{
+            list-style: none;
+        }
+        .amount ul li {
+            float: left;
+            margin-right: 20px;
+        }
+        .search input{
+            display: inline-block;
+            outline: none;
+            border: #34c86c solid 1px;
+            width: 200px;
+            height: 34px;
+            padding-left: 7px;
+        }
+        .search a{
+            display: inline-block;
+            margin-left: 20px;
+        }
+        .content{
+            margin-top: 170px;
+            width: 440px;
+        }
+        .content ul{
+            list-style: none;
+        }
+        .content ul li{
+            border-bottom: #edeff3 solid 1px ;
+            padding-top: 15px;
+            padding-bottom: 5px;
+            /*position: relative;*/
+        }
+        .phone{
+            color: #596167;
+        }
+
+
+    </style>
+    <script>
+        $(function () {
+            var allCards = new Array()
+            var url = 'http://afantizz.com/likingfit/taste-card-list'
+            $.post(url, {}, function (response, status) {
+                if (status != 'success') {
+                    showModel('操作失败,请稍后重试')
+                    return
+                }
+                var resp = $.parseJSON(response);
+                if (resp.err_code != 0) {
+                    showModel(resp.err_msg,function () {
+
+                    },1200)
+                    return
+                }
+                allCards = resp.data
+                $(".amount .all").text("总数量: "+allCards.length)
+                addCardList(allCards)
+
+            });
+
+            function addCard(card) {
+                var ul = $('.content ul')
+                var li = $("<li class='clearfix'></li>")
+                ul.append(li)
+
+                var p1 = $("<p class='name'></p>")
+                p1.text(card.name)
+                var p2 = $("<p class='phone'></p>")
+                p2.text(card.phone)
+                li.append(p1)
+                li.append(p2)
+            }
+
+            function addCardList(cards) {
+                $('.content ul li').remove()
+                for (var i=0;i<cards.length;i++) {
+                    var card = cards[i]
+                    addCard(card)
+                }
+            }
+
+            //搜索
+            $('input').bind('input propertychange',function () {
+
+                var searchCards = new Array()
+                var tx = $('input').val()
+                for (var i=0;i<allCards.length;i++){
+                    var card = allCards[i]
+                    if (card.phone.indexOf(tx) > -1) {
+                        searchCards.push(coupon)
+                    }
+                }
+                addCardList(searchCoupons)
+            })
+        })
+    </script>
+</head>
+<body>
+
+<div class="container">
+    <div class="top">
+        <div class="amount clearfix">
+            <ul>
+                <li class="all">总数量:</li>
+            </ul>
+        </div>
+        <div class="search">
+            <input type="text" placeholder="输入手机号">
+        </div>
+    </div>
+    <div class="content">
+        <ul>
+            <li class="clearfix">
+            <div class="pull-left">
+                <p class="name">袁超</p>
+                <p class="phone">15801569925</p>
+            </div>
+            <div class="action pull-right">
+                <a href="javascript:">完成</a>
+            </div>
+        </li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
