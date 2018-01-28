@@ -24,7 +24,7 @@ body{
     top: 13px;
     width: 23px;
     height: 16px;
-    background-image: url("http://afantizz.com/images/icons.png");
+    background-image: url("/images/icons.png");
     background-position: -63px -375px;
 }
 .alert span{
@@ -55,7 +55,7 @@ body{
     top: 11px;
     width: 16px;
     height: 16px;
-    background-image: url("http://afantizz.com/images/icons.png");
+    background-image: url("/images/icons.png");
     background-position: -66px 0px;
 }
 .reason ul li i.checked{

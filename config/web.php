@@ -3,7 +3,6 @@
 $params = require(__DIR__ . '/params.php');
 require(__DIR__.'/redis.php');
 require(__DIR__.'/constants.php');
-
 $config = [
     'id' => 'afantizz',
     'basePath' => dirname(__DIR__),

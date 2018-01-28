@@ -8,16 +8,10 @@
 
 namespace app\controllers;
 
-use app\models\User;
+use app\services\HouseBrowseService;
 use app\services\HouseService;
-use app\services\UserService;
-use app\utils\GlobalAction;
 use app\utils\UtilHelper;
-use Yii;
-use yii\web\Controller;
 use app\utils\BizConsts;
-
-header("Access-Control-Allow-Origin: *"); # 跨域处理
 
 class HouseController extends BaseController {
 
@@ -26,26 +20,23 @@ class HouseController extends BaseController {
      */
     public function actionList() {
         try {
-            $district = $this->requestParam['district'];
-            $subway = $this->requestParam['subway'];
-            $price = $this->requestParam['price'];
-            $style = $this->requestParam['style'];
-            $rentMode = $this->requestParam['rent_mode'];
-            $sort = $this->requestParam['sort'];
-            $page = $this->requestParam['page'];
-            $houses = HouseService::getHouseList($district,$subway,$price,$style,$rentMode,$sort,$page);
-            UtilHelper::echoResult(BizConsts::SUCCESS,BizConsts::SUCCESS_MSG,$houses);
+            $houseList = HouseService::getHouseList($this->requestParam);
+            UtilHelper::echoResult(BizConsts::SUCCESS,BizConsts::SUCCESS_MSG,$houseList);
         } catch (\Exception $e) {
             UtilHelper::handleException($e);
         }
     }
+
 
     /**
      * 搜索房源
      */
     function actionSearch() {
         try {
-            $keyword = $this->requestParam['search_keyword'];
+            $keyword = $this->requestParam['keyword'];
+            if (empty($keyword)) {
+                UtilHelper::echoExitResult(BizConsts::SUCCESS,BizConsts::SUCCESS_MSG,[]);
+            }
             $houses = HouseService::getHousesByKeyword($keyword);
             UtilHelper::echoResult(BizConsts::SUCCESS,BizConsts::SUCCESS_MSG,$houses);
         } catch (\Exception $e) {
@@ -56,15 +47,29 @@ class HouseController extends BaseController {
     /**
      * 房源详情
      */
-    function actionDetail() {
+    function actionInfo() {
         try {
-            $hid = $this->requestParam['house_id'];
+            $houseId = $this->requestParam['house_id'];
             $token = $this->requestParam['token'];
-            $house = HouseService::getHouseInfo($hid,$token);
+            $house = HouseService::getHouseInfo($houseId,$token);
+            HouseBrowseService::recordBrowse($houseId,$token);
             UtilHelper::echoResult(BizConsts::SUCCESS,BizConsts::SUCCESS_MSG,$house);
         } catch (\Exception $e) {
             UtilHelper::handleException($e);
         }
+    }
+
+    /**
+     * 房源信息(编辑房源时复原的信息)
+     */
+    function actionRestore() {
+        $houseId = $this->requestParam['house_id'];
+        $token = $this->requestParam['token'];
+        if (!$this->checkLoginState($token)) {
+            UtilHelper::echoExitResult(BizConsts::UNLOGIN_ERRCODE, BizConsts::UNLOGIN_ERRMSG);
+        }
+        $house = HouseService::getRestoreInfo($houseId);
+        UtilHelper::echoResult(BizConsts::SUCCESS,BizConsts::SUCCESS_MSG,$house);
     }
 
     /**
@@ -88,7 +93,6 @@ class HouseController extends BaseController {
             $params = $this->requestParam;
 
             HouseService::validData($params);
-
             HouseService::modifyHouse($params);
         } catch (\Exception $e) {
             UtilHelper::handleException($e);
@@ -101,9 +105,11 @@ class HouseController extends BaseController {
     function actionStick() {
         try {
             $token = $this->requestParam['token'];
-            GlobalAction::checkLoginState($token);
             $houseId = $this->requestParam['house_id'];
-            HouseService::stickHouse($houseId);
+            if (!$this->checkLoginState($token)) {
+                UtilHelper::echoExitResult(BizConsts::UNLOGIN_ERRCODE, BizConsts::UNLOGIN_ERRMSG);
+            }
+            HouseService::stickHouse($token,$houseId);
             UtilHelper::echoResult(BizConsts::SUCCESS,BizConsts::SUCCESS_MSG);
         } catch (\Exception $e) {
             UtilHelper::handleException($e);
@@ -116,9 +122,11 @@ class HouseController extends BaseController {
     function actionDelete() {
         try {
             $token = $this->requestParam['token'];
-            GlobalAction::checkLoginState($token);
             $houseId = $this->requestParam['house_id'];
-            HouseService::deleteHouse($houseId);
+            if (!$this->checkLoginState($token)) {
+                UtilHelper::echoExitResult(BizConsts::UNLOGIN_ERRCODE, BizConsts::UNLOGIN_ERRMSG);
+            }
+            HouseService::deleteHouse($token, $houseId);
             UtilHelper::echoResult(BizConsts::SUCCESS,BizConsts::SUCCESS_MSG);
         } catch (\Exception $e) {
             UtilHelper::handleException($e);
@@ -131,38 +139,12 @@ class HouseController extends BaseController {
     function actionChangeSellState() {
         try {
             $token = $this->requestParam['token'];
-            GlobalAction::checkLoginState($token);
-            $sell = $this->requestParam['sell'];
             $houseId = $this->requestParam['house_id'];
-            HouseService::changeSellState($houseId,$sell);
-            UtilHelper::echoResult(BizConsts::SUCCESS,BizConsts::SUCCESS_MSG);
-        } catch (\Exception $e) {
-            UtilHelper::handleException($e);
-        }
-    }
-
-    /**
-     * 收藏房源
-     */
-    function actionCollection() {
-        try {
-            $token = $this->requestParam['token'];
-            GlobalAction::checkLoginState($token);
-            HouseService::collectionHouse($this->requestParam);
-            UtilHelper::echoResult(BizConsts::SUCCESS,BizConsts::SUCCESS_MSG);
-        } catch (\Exception $e) {
-            UtilHelper::handleException($e);
-        }
-    }
-
-    /**
-     * 取消收藏房源
-     */
-    function actionCancelCollection() {
-        try {
-            $token = $this->requestParam['token'];
-            GlobalAction::checkLoginState($token);
-            HouseService::cancelCollectionHouse($this->requestParam);
+            $sell = $this->requestParam['sell'];
+            if (!$this->checkLoginState($token)) {
+                UtilHelper::echoExitResult(BizConsts::UNLOGIN_ERRCODE, BizConsts::UNLOGIN_ERRMSG);
+            }
+            HouseService::changeSellState($token,$houseId,$sell);
             UtilHelper::echoResult(BizConsts::SUCCESS,BizConsts::SUCCESS_MSG);
         } catch (\Exception $e) {
             UtilHelper::handleException($e);
@@ -172,9 +154,13 @@ class HouseController extends BaseController {
     /**
      * 举报房源
      */
-    function actionAccusation() {
+    function actionComplain() {
         try {
-            HouseService::complainHouse($this->requestParam);
+            $params = $this->requestParam;
+            if (empty($params['reason']) && empty($params['desc'])) {
+                UtilHelper::echoExitResult(BizConsts::ABSENCE_COMPLAIN_REASON_ERRCODE,BizConsts::ABSENCE_COMPLAIN_REASON_ERRMSG);
+            }
+            HouseService::complainHouse($params);
             UtilHelper::echoResult(BizConsts::SUCCESS,BizConsts::SUCCESS_MSG);
         } catch (\Exception $e) {
             UtilHelper::handleException($e);

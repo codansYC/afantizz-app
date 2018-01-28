@@ -29,9 +29,6 @@ class UtilHelper {
 		$result = array ();
 		$result ['err_code'] = $errCode;
 		$result ['err_msg'] = $errMsg;
-        if (!is_object($data)) {
-            $data = ( object ) $data;
-        }
 		$result ['data'] = $data ? $data : ( object ) $data;
 		echo json_encode ( $result );
 	}
@@ -992,10 +989,10 @@ class UtilHelper {
 	/**
 	 * 随机获取字符串
 	 * @param unknown $length
-	 * @return Ambigous <NULL, string>
+	 * @return Ambigous string
 	 */
 	public static function getRandChar($length){
-		$str = null;
+		$str = '';
 		$strPol = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz";
 		$max = strlen($strPol)-1;
 	
@@ -1119,6 +1116,13 @@ class UtilHelper {
         }
     }
 
+    /** 根据district_code 获取 district
+     * @param $code  区县代号
+     */
+    static function getDistrictByCode($code) {
+        $districts = \Yii::$app->params['districts'];
+        return $districts[$code];
+    }
 }
 
 

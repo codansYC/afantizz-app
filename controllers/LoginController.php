@@ -9,7 +9,6 @@ use app\utils\BizConsts;
 use app\utils\Sms;
 use app\utils\SysConsts;
 
-header("Access-Control-Allow-Origin: *"); # 跨域处理
 class LoginController extends BaseController{
 
 	/**
@@ -83,11 +82,6 @@ class LoginController extends BaseController{
 		try {
 			$token = $this->requestParam['token'];
 			$registrationId = isset($this->requestParam['registration_id']) ? $this->requestParam['registration_id'] : null;
-            //插入loginout log（登出日志）
-			$managerInfo = TokenService::checkToken($token,$type=false);
-            $managerInfo['loginout_type'] = SysConsts::AVAILABLE_TWO;
-            ManagerService::adduserloginoutlog($managerInfo,$token);
-			ManagerDevice::logout($token, $registrationId);
 			UtilHelper::echoResult(BizConsts::SUCCESS,BizConsts::SUCCESS_MSG);
 		} catch (\Exception $e) {
 			UtilHelper::handleException($e);

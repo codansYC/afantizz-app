@@ -10,7 +10,6 @@ use app\utils\GlobalAction;
 use Yii;
 use yii\web\Controller;
 
-header("Access-Control-Allow-Origin: *"); # 跨域处理
 class IndexController extends BaseController {
 
     function actionIndex() {

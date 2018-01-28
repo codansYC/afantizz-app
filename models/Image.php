@@ -8,8 +8,13 @@
 
 namespace app\models;
 
-class Image {
-    public $origin_url;
-    public $thumb_url;
-    public $key = '';  //上传图片时的key
+use yii\db\ActiveRecord;
+
+class Image extends ActiveRecord {
+
+    public static function tableName()
+    {
+        return 'image';
+    }
+
 }

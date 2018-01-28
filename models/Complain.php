@@ -2,8 +2,8 @@
 /**
  * Created by PhpStorm.
  * User: lekuai
- * Date: 2017/11/20
- * Time: 下午10:54
+ * Date: 2017/6/18
+ * Time: 下午3:37
  */
 
 namespace app\models;
@@ -11,10 +11,11 @@ namespace app\models;
 
 use yii\db\ActiveRecord;
 
-class TasteCard extends ActiveRecord
+class Complain extends ActiveRecord
 {
     public static function tableName()
     {
-        return 'taste_card';
+        return 'complain';
     }
+
 }

@@ -8,8 +8,6 @@
 
 namespace app\controllers;
 
-
-use app\utils\GlobalAction;
 use app\utils\UtilHelper;
 use app\utils\BizConsts;
 use app\models\IndexRecord;
@@ -22,7 +20,7 @@ class RecordController extends BaseController{
             $platform = $this->requestParam['platform'];
             $size = $this->requestParam['size'];
             $user_agent = $this->requestParam['user_agent'];
-            $date = GlobalAction::getTimeStr("Y-m-d H:i:s");
+            $date = UtilHelper::getTimeStr("Y-m-d H:i:s");
             if (!isset($token)) {
                 $token = '';
             }
