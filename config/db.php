@@ -1,6 +1,6 @@
 <?php
 
-$dev = false;
+$dev = true;
 $debug = true;
 
 $devDB = [
