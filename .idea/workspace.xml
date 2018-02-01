@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4742c39-c67e-4271-99a6-6a1d583063ac" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/db.php" afterPath="$PROJECT_DIR$/config/db.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/m/detail.html" afterPath="$PROJECT_DIR$/web/m/detail.html" />
     </list>
     <ignored path="afantizz.iws" />
@@ -102,8 +100,8 @@
       <file leaf-file-name="detail.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/m/detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="25" column="42" selection-start-line="25" selection-start-column="42" selection-end-line="25" selection-end-column="42" />
+            <state relative-caret-position="238">
+              <caret line="22" column="61" selection-start-line="22" selection-start-column="61" selection-end-line="22" selection-end-column="61" />
               <folding>
                 <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#5;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -550,7 +548,7 @@
       <workItem from="1516957598997" duration="26233000" />
       <workItem from="1517197059276" duration="503000" />
       <workItem from="1517218759960" duration="11180000" />
-      <workItem from="1517384014585" duration="3599000" />
+      <workItem from="1517384014585" duration="3654000" />
     </task>
     <task id="LOCAL-00001" summary="添加图片">
       <created>1500205810113</created>
@@ -563,7 +561,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="866128000" />
+    <option name="totallyTimeSpent" value="866183000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="25" y="35" width="1280" height="709" extended-state="0" />
@@ -986,8 +984,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/m/detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="25" column="42" selection-start-line="25" selection-start-column="42" selection-end-line="25" selection-end-column="42" />
+        <state relative-caret-position="238">
+          <caret line="22" column="61" selection-start-line="22" selection-start-column="61" selection-end-line="22" selection-end-column="61" />
           <folding>
             <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#5;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
