@@ -310,10 +310,6 @@ class UtilHelper {
 			UtilHelper::echoResult ( BizConsts::REDIS_UNREACH_ERRCODE, BizConsts::REDIS_UNREACH_ERRMSG );
 			return;
 		}
-		if ($e instanceof BaseException || is_subclass_of($e, 'app\modules\v1\exception\BaseException')) {
-            UtilHelper::echoResult($e->getCode(), $e->getMessage());
-            return;
-        }
         if (is_subclass_of($e, 'app\exception\BaseException')) {
         	UtilHelper::echoResult($e->getCode(), $e->getMessage());
         	return;

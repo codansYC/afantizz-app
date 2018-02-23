@@ -36,7 +36,7 @@ class HouseBrowseService
         $browseCount['total'] = count($browseList);
         $todayBrowseCount = 0;
         foreach ($browseList AS $browse) {
-            if (strtotime($browse->create_time) > $todayTimestamp) {
+            if (strtotime($browse->create_time) > strtotime($todayTimestamp)) {
                 $todayBrowseCount++;
             }
         }

@@ -54,7 +54,6 @@ $(function () {
         url_token = getParams('token')
     }
 
-
 })
 
 /*调整标题*/
@@ -216,6 +215,7 @@ function loadHouseInfo(house) {
 $(function () {
     //图片上传
     $("#file_input").change(function () {
+
         var file = $("#file_input")[0].files[0]
         var data = new FormData();
         data.append('file', file)
@@ -509,9 +509,20 @@ function release(subways,traffics) {
             return
         }
         showModel('发布成功',function () {
-            if (typeof(JSInteraction) != "undefined" && JSInteraction != null) {
-                JSInteraction.toDetailPage(resp.data)
+            location.reload()
+            var params = (decodeURIComponent(location.href).split("?")[1]).split("&")
+            var destUrl = getMainPath()
+            for (var i = 0; i < params.length; i++) {
+                var param = params[i]
+                if (param.indexOf("house_id") < 0) {
+                    if (destUrl.indexOf("?") < 0) {
+                        destUrl += ("?" + param)
+                    } else {
+                        destUrl += ("&" + param)
+                    }
+                }
             }
+            location.href = destUrl
         },1000)
     });
 }

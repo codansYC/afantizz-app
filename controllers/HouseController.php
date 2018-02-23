@@ -27,7 +27,6 @@ class HouseController extends BaseController {
         }
     }
 
-
     /**
      * 搜索房源
      */
@@ -166,5 +165,4 @@ class HouseController extends BaseController {
             UtilHelper::handleException($e);
         }
     }
-
 }

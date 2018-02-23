@@ -183,7 +183,7 @@ class HouseService {
         }
         $houseInfo['facilities'] = $facilities;
         $houseInfo['is_toilet_single'] = in_array('toilet',$installation);
-        $houseInfo['images'] = Image::find()->select(['url','thumb_url'])
+        $houseInfo['images'] = Image::find()->select(['url','middle_url'])
             ->where(['source_id' => $houseId])
             ->asArray()
             ->all();

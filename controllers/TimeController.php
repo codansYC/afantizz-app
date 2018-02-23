@@ -35,7 +35,6 @@ class TimeController extends Controller {
 		}
 		
 		$appkey = $appkeys[$appVersion];
-		
 		$timestamp = $requestParam ['timestamp'];
 		$signature = $requestParam ['signature'];
 		$requestId = $requestParam ['request_id'];
@@ -48,7 +47,6 @@ class TimeController extends Controller {
 		sort ( $arr, SORT_STRING );
 		$dictStr = implode ( $arr );
 		$encryptStr = sha1 ( $dictStr );
-		
 		// 签名合法性验证
 		if ($signature != $encryptStr) {
 			UtilHelper::echoExitResult( BizConsts::REQUEST_INVALID_ERRCODE, BizConsts::REQUEST_INVALID_ERRMSG );
@@ -56,7 +54,7 @@ class TimeController extends Controller {
 
 		$result['timestamp'] = strval(time());
 	
-		UtilHelper::echoExitResult(BizConsts::SUCCESS,BizConsts::SUCCESS_MSG,$result);
+		UtilHelper::echoResult(BizConsts::SUCCESS,BizConsts::SUCCESS_MSG,$result);
 	}
 }
 

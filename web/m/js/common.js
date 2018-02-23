@@ -267,6 +267,7 @@ function handleTraffic(pois) {
 }
 
 function request(url,params,respBlock) {
+    params['platform'] = 'js'
     $.post(basicUrl + url, params, function (response, status) {
         if (status != 'success') {
             showModel('操作失败')

@@ -32,14 +32,15 @@ class BaseController extends Controller {
 		if(!parent::beforeAction($action)){
 			return false;
 		}
-        $this->requestParam = $_REQUEST;
-		return true;
 		try {
 			$this->requestParam = $_REQUEST;
-//	 		self::validParams();//检验参数合法性
-//	 		self::filterParams();//过滤参数
+            if ($this->requestParam['platform'] == 'js') {
+                return true;
+            }
+	 		self::validParams();//检验参数合法性
+	 		self::filterParams();//过滤参数
 //			self::apiConfig($action);//获取接口配置
-//	 		self::validRequest();//检验请求的合法性
+	 		self::validRequest();//检验请求的合法性
 		} catch (\Exception $e) {
 			UtilHelper::handleException($e);
 			return false;
@@ -102,23 +103,12 @@ class BaseController extends Controller {
 				$interval = time() - $timestamp;
 				$timeoutLog = 'requestId:'.$requestId.' currentTime:'.time().' requestTime:'.$timestamp.' intervalTime:'.$interval."\n";
 				Logger::info($timeoutLog);
-				throw new BaseException(BaseException::REQUEST_TIMEOUT_ERRMSG, BaseException::REQUEST_TIMEOUT_ERRCODE);
+				throw new BaseException(BaseException::REQUEST_TIMEOUT_ERRMSG,BaseException::REQUEST_TIMEOUT_ERRCODE);
 			}
 		}
 		//校验签名
 		if($signature != $this->__Sign($this->requestParam)){
 			throw new BaseException(BaseException::REQUEST_INVALID_ERRMSG, BaseException::REQUEST_INVALID_ERRCODE);
-		}
-		//登录态下的校验：校验token的有效性、校验请求的合法性，是否请求重放
-		if($this->config['needToken']){
-			if(empty($this->requestParam['token'])){
-				throw new LoginException(LoginException::LOGIN_EXPIRE_ERRMSG, LoginException::LOGIN_EXPIRE_ERRCODE);
-			}
-			$token = $this->requestParam['token'];
-			//校验重放攻击
-			self::checkReqId($token,$signature);
-			//校验token
-			$this->managerInfo = TokenService::checkToken($token,$type=false);
 		}
 		return;
 	}

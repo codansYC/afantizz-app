@@ -1,13 +1,15 @@
 <?php
 namespace  app\exception;
 
-use app\utils\ExceptionConsts;
-use app\utils\Logger;
-
 class BaseException extends \Exception { 
-	public function __construct($message,$code = ExceptionConsts::PARAM_EXCEPTION_ERRCODE){
+	public function __construct($message,$code){
 // 		Logger::info($message);
 		parent::__construct($message,$code);
 	}
-	
+
+    const PARAM_INVALID_ERRMSG = "参数无效";
+    const PARAM_INVALID_ERRCODE = 10000;
+
+    const REQUEST_TIMEOUT_ERRMSG = "请求超时";
+    const REQUEST_TIMEOUT_ERRCODE = 10001;
 }

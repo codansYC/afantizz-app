@@ -159,7 +159,7 @@ function requestHouseInfo() {
 //原图
 var originImages = new Array();
 //缩略图
-var thumbImages = new Array();
+var middleImages = new Array();
 
 //显示房源信息
 function showHouseInfo() {
@@ -169,7 +169,7 @@ function showHouseInfo() {
     for (var i = 0; i < images.length; i++) {
         var image = images[i];
         originImages[i] = image.url
-        thumbImages[i] = image.thumb_url;
+        middleImages[i] = image.middle_url
     }
 
     //幻灯片
@@ -432,7 +432,7 @@ function accusate() {
 //处理小图幻灯片
 function handleSmallImageCarousel() {
     //幻灯片
-    var images = thumbImages
+    var images = middleImages
     imgList.children().remove()
     imageCount = images.length
     imgList.width(imgW*imageCount)
