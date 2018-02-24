@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4742c39-c67e-4271-99a6-6a1d583063ac" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/m/js/common.js" afterPath="$PROJECT_DIR$/web/m/js/common.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/m/js/release.js" afterPath="$PROJECT_DIR$/web/m/js/release.js" />
     </list>
     <ignored path="afantizz.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,6 +33,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="BaseController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controllers/BaseController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="33" column="9" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="UserService.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/services/UserService.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -53,11 +63,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="common.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="common.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/m/js/common.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+            <state relative-caret-position="323">
+              <caret line="19" column="33" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -69,6 +79,27 @@
             <state relative-caret-position="17">
               <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="release.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/m/js/release.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="325">
+              <caret line="495" column="26" selection-start-line="495" selection-start-column="26" selection-end-line="495" selection-end-column="26" />
+              <folding>
+                <element signature="e#300#1493#0" expanded="false" />
+                <element signature="e#1519#1565#0" expanded="false" />
+                <element signature="n#!!block;n#adjustTitle#0" expanded="false" />
+                <element signature="n#!!block;n#restoreHouseIfModify#0" expanded="false" />
+                <element signature="e#3088#3151#0" expanded="false" />
+                <element signature="n#!!block;n#loadHouseInfo#0" expanded="false" />
+                <element signature="n#!!block;n#previewImage#0" expanded="false" />
+                <element signature="n#!!block;n#updateImgUlWidth#0" expanded="false" />
+                <element signature="n#!!block;n#addMoveEventForImgUl#0" expanded="false" />
+                <marker date="1519456169000" expanded="true" signature="8220:8227" ph="×" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -129,7 +160,6 @@
         <option value="$PROJECT_DIR$/services/HouseService.php" />
         <option value="$PROJECT_DIR$/web/m/js/detail.js" />
         <option value="$PROJECT_DIR$/web/m/release.html" />
-        <option value="$PROJECT_DIR$/web/m/js/release.js" />
         <option value="$PROJECT_DIR$/utils/UtilHelper.php" />
         <option value="$PROJECT_DIR$/exception/BaseException.php" />
         <option value="$PROJECT_DIR$/controllers/HouseController.php" />
@@ -141,6 +171,7 @@
         <option value="$PROJECT_DIR$/services/UserService.php" />
         <option value="$PROJECT_DIR$/controllers/LoginController.php" />
         <option value="$PROJECT_DIR$/web/m/js/common.js" />
+        <option value="$PROJECT_DIR$/web/m/js/release.js" />
       </list>
     </option>
   </component>
@@ -155,7 +186,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="y" value="25" />
+    <option name="x" value="39" />
+    <option name="y" value="29" />
     <option name="width" value="1441" />
     <option name="height" value="709" />
   </component>
@@ -480,7 +512,7 @@
       <workItem from="1518336951436" duration="4781000" />
       <workItem from="1518421077346" duration="5645000" />
       <workItem from="1519282159031" duration="2716000" />
-      <workItem from="1519286291311" duration="14018000" />
+      <workItem from="1519286291311" duration="14838000" />
     </task>
     <task id="LOCAL-00001" summary="添加图片">
       <created>1500205810113</created>
@@ -493,10 +525,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="895072000" />
+    <option name="totallyTimeSpent" value="895892000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="25" width="1441" height="709" extended-state="0" />
+    <frame x="39" y="29" width="1441" height="709" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24017155" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
@@ -777,25 +809,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/m/js/release.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="218" column="47" selection-start-line="218" selection-start-column="47" selection-end-line="218" selection-end-column="47" />
-          <folding>
-            <element signature="e#300#1493#0" expanded="false" />
-            <element signature="e#1519#1565#0" expanded="false" />
-            <element signature="n#!!block;n#adjustTitle#0" expanded="false" />
-            <element signature="n#!!block;n#restoreHouseIfModify#0" expanded="false" />
-            <element signature="e#3088#3151#0" expanded="false" />
-            <element signature="n#!!block;n#loadHouseInfo#0" expanded="false" />
-            <element signature="n#!!block;n#previewImage#0" expanded="false" />
-            <element signature="n#!!block;n#updateImgUlWidth#0" expanded="false" />
-            <element signature="n#!!block;n#addMoveEventForImgUl#0" expanded="false" />
-            <marker date="1519283969000" expanded="true" signature="8220:8227" ph="×" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/standard_defines.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -905,14 +918,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/BaseController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="33" column="9" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controllers/ConfigController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="282">
@@ -947,9 +952,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/m/js/common.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        <state relative-caret-position="323">
+          <caret line="19" column="33" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/BaseController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="33" column="9" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/m/js/release.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="495" column="26" selection-start-line="495" selection-start-column="26" selection-end-line="495" selection-end-column="26" />
+          <folding>
+            <element signature="e#300#1493#0" expanded="false" />
+            <element signature="e#1519#1565#0" expanded="false" />
+            <element signature="n#!!block;n#adjustTitle#0" expanded="false" />
+            <element signature="n#!!block;n#restoreHouseIfModify#0" expanded="false" />
+            <element signature="e#3088#3151#0" expanded="false" />
+            <element signature="n#!!block;n#loadHouseInfo#0" expanded="false" />
+            <element signature="n#!!block;n#previewImage#0" expanded="false" />
+            <element signature="n#!!block;n#updateImgUlWidth#0" expanded="false" />
+            <element signature="n#!!block;n#addMoveEventForImgUl#0" expanded="false" />
+            <marker date="1519456169000" expanded="true" signature="8220:8227" ph="×" />
+          </folding>
         </state>
       </provider>
     </entry>

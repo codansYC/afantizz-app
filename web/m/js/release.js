@@ -492,7 +492,8 @@ function release(subways,traffics) {
             qq: qq,
             subways:subway,
             traffic: traffic,
-            images:images
+            images:images,
+            platform: 'js'
         }
     var url = isModify ? basicUrl + "house/modify" : basicUrl + "house/release" ;
     $.post(url, params, function (response, status) {
