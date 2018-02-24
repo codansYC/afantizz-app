@@ -71,7 +71,8 @@ function accusate() {
         reason: reason,
         token: app_token,
         phone: phone,
-        desc: desc
+        desc: desc,
+        platform: 'js'
     }
     $.post(basicUrl + 'house/complain', params, function (response, status) {
         if (typeof(JSInteraction) != "undefined" && JSInteraction != null) {
