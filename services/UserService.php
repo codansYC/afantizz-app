@@ -60,6 +60,7 @@ class UserService
 
     static private function addUserWithPhone($phone,$platform)
     {
+
         $user = new User();
         $user->phone = $phone;
         $user->user_id = 'afantizz'.UtilHelper::getGuid();
@@ -73,13 +74,12 @@ class UserService
     static private function generateUserToken($userId, $phone) {
         $userToken = UserToken::find()->where(['user_id' => $userId])->one();
         $time = UtilHelper::getTimeStr("Y-m-d H:i:s");
-        if ($userToken) {
-            $userToken->update_time = $time;
-        } else {
+        if (!$userToken) {
             $userToken = new UserToken();
             $userToken->create_time = $time;
             $userToken->user_id = $userId;
         }
+        $userToken->update_time = $time;
         $userToken->token = UtilHelper::generateToken($userId, $phone);
         $userToken->save();
     }

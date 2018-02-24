@@ -56,6 +56,7 @@ class LoginController extends BaseController{
 	 * 登录接口
 	 */
 	public function actionLogin(){
+        $transaction = \Yii::$app->db->beginTransaction();
 		try {
 			$phone = $this->requestParam['phone'];
 			$captcha = $this->requestParam['captcha'];
@@ -65,13 +66,14 @@ class LoginController extends BaseController{
 				UtilHelper::validLogin($phone,$captcha);//校验手机号及验证码
                 $valid = CaptchaService::checkPhoneAndCaptcha($phone,$captcha);
 			}
-
             if (!$valid) {
                 UtilHelper::echoExitResult(BizConsts::WRONG_CAPTCHA_ERRCODE,BizConsts::WRONG_CAPTCHA_ERRMSG);
             }
             $userInfo = UserService::getUserByPhone($phone,$platform);
+            $transaction->commit();
             UtilHelper::echoResult(BizConsts::SUCCESS,BizConsts::SUCCESS_MSG,$userInfo);
 		} catch (\Exception $e) {
+            $transaction->rollBack();
 			UtilHelper::handleException($e);
 		}
 	}
