@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4742c39-c67e-4271-99a6-6a1d583063ac" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/m/js/common.js" afterPath="$PROJECT_DIR$/web/m/js/common.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/services/HouseService.php" afterPath="$PROJECT_DIR$/services/HouseService.php" />
     </list>
     <ignored path="afantizz.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,8 +26,8 @@
       <file leaf-file-name="HouseController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/HouseController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="15" column="36" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
+            <state relative-caret-position="136">
+              <caret line="80" column="31" selection-start-line="80" selection-start-column="31" selection-end-line="80" selection-end-column="31" />
               <folding>
                 <element signature="e#117#153#0#PHP" expanded="true" />
               </folding>
@@ -41,16 +40,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="3689">
               <caret line="225" column="5" selection-start-line="217" selection-start-column="4" selection-end-line="225" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="myFollow.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/m/js/myFollow.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2040">
-              <caret line="120" column="1" selection-start-line="120" selection-start-column="1" selection-end-line="120" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -96,32 +85,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="common.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/m/js/common.js">
+      <file leaf-file-name="release.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/m/js/release.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="106" selection-start-line="6" selection-start-column="106" selection-end-line="6" selection-end-column="106" />
-              <folding />
+            <state relative-caret-position="87">
+              <caret line="453" column="25" selection-start-line="453" selection-start-column="25" selection-end-line="453" selection-end-column="25" />
+              <folding>
+                <marker date="1519456169000" expanded="true" signature="8220:8227" ph="×" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="complain.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/m/js/complain.js">
+      <file leaf-file-name="HouseService.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/services/HouseService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="20" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="detail.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/m/js/detail.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="152" column="9" selection-start-line="152" selection-start-column="9" selection-end-line="152" selection-end-column="9" />
-              <folding />
+            <state relative-caret-position="417">
+              <caret line="320" column="49" selection-start-line="320" selection-start-column="49" selection-end-line="320" selection-end-column="49" />
+              <folding>
+                <element signature="e#582#3319#0#PHP" expanded="false" />
+                <element signature="e#3325#4706#0#PHP" expanded="false" />
+                <element signature="e#4798#7111#0#PHP" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -178,7 +163,6 @@
         <option value="$PROJECT_DIR$/web/m/detail.html" />
         <option value="$PROJECT_DIR$/services/HouseBrowseService.php" />
         <option value="$PROJECT_DIR$/config/params.php" />
-        <option value="$PROJECT_DIR$/services/HouseService.php" />
         <option value="$PROJECT_DIR$/web/m/js/detail.js" />
         <option value="$PROJECT_DIR$/web/m/release.html" />
         <option value="$PROJECT_DIR$/utils/UtilHelper.php" />
@@ -194,6 +178,7 @@
         <option value="$PROJECT_DIR$/services/UserService.php" />
         <option value="$PROJECT_DIR$/config/db.php" />
         <option value="$PROJECT_DIR$/web/m/js/common.js" />
+        <option value="$PROJECT_DIR$/services/HouseService.php" />
       </list>
     </option>
   </component>
@@ -208,7 +193,7 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="3" />
+    <option name="x" value="34" />
     <option name="y" value="23" />
     <option name="width" value="1280" />
     <option name="height" value="709" />
@@ -598,7 +583,7 @@
       <workItem from="1519465020209" duration="9523000" />
       <workItem from="1520066321545" duration="763000" />
       <workItem from="1520147817865" duration="1063000" />
-      <workItem from="1520169600064" duration="206000" />
+      <workItem from="1520169600064" duration="1151000" />
     </task>
     <task id="LOCAL-00001" summary="添加图片">
       <created>1500205810113</created>
@@ -611,10 +596,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="909526000" />
+    <option name="totallyTimeSpent" value="910471000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="3" y="23" width="1280" height="709" extended-state="0" />
+    <frame x="34" y="23" width="1280" height="709" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25605816" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
@@ -884,13 +869,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/m/js/release.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="199" column="6" selection-start-line="199" selection-start-column="6" selection-end-line="199" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/HouseBrowse.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -946,28 +924,6 @@
           <caret line="244" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="244" selection-end-column="0" />
           <folding>
             <marker date="1517119750000" expanded="true" signature="3245:3260" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/services/HouseService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4250">
-          <caret line="412" column="0" selection-start-line="22" selection-start-column="4" selection-end-line="412" selection-end-column="0" />
-          <folding>
-            <element signature="e#582#3319#0#PHP" expanded="false" />
-            <element signature="e#3325#4706#0#PHP" expanded="false" />
-            <element signature="e#4798#7111#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/HouseController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="15" column="36" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
-          <folding>
-            <element signature="e#117#153#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1028,6 +984,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/m/js/common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/m/js/detail.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -1036,11 +1000,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/m/js/common.js">
+    <entry file="file://$PROJECT_DIR$/web/m/js/release.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="106" selection-start-line="6" selection-start-column="106" selection-end-line="6" selection-end-column="106" />
-          <folding />
+        <state relative-caret-position="87">
+          <caret line="453" column="25" selection-start-line="453" selection-start-column="25" selection-end-line="453" selection-end-column="25" />
+          <folding>
+            <marker date="1519456169000" expanded="true" signature="8220:8227" ph="×" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/HouseController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="80" column="31" selection-start-line="80" selection-start-column="31" selection-end-line="80" selection-end-column="31" />
+          <folding>
+            <element signature="e#117#153#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/HouseService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="417">
+          <caret line="320" column="49" selection-start-line="320" selection-start-column="49" selection-end-line="320" selection-end-column="49" />
+          <folding>
+            <element signature="e#582#3319#0#PHP" expanded="false" />
+            <element signature="e#3325#4706#0#PHP" expanded="false" />
+            <element signature="e#4798#7111#0#PHP" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

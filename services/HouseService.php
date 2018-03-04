@@ -317,6 +317,8 @@ class HouseService {
         $house->qq = $data['qq'];
         $house->subways = $data['subways'];
         $house->traffic = $data['traffic'];
+        $house->benefit = $data['benefit'];
+        $house->house_desc = $data['house_desc'];
         $house->create_time = UtilHelper::getTimeStr('YmdHis');
         $house->status = 1;
         $images = explode(',',$data['images']);
