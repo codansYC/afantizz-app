@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4742c39-c67e-4271-99a6-6a1d583063ac" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/services/HouseService.php" afterPath="$PROJECT_DIR$/services/HouseService.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/m/js/release.js" afterPath="$PROJECT_DIR$/web/m/js/release.js" />
     </list>
     <ignored path="afantizz.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -85,26 +85,26 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="release.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="release.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/m/js/release.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="720">
-              <caret line="469" column="36" selection-start-line="469" selection-start-column="36" selection-end-line="469" selection-end-column="36" />
+            <state relative-caret-position="285">
+              <caret line="463" column="17" selection-start-line="463" selection-start-column="17" selection-end-line="463" selection-end-column="17" />
               <folding>
                 <element signature="e#6134#7599#0" expanded="false" />
                 <element signature="n#!!block;n#previewImage#0" expanded="false" />
                 <element signature="n#!!block;n#addMoveEventForImgUl#0" expanded="false" />
-                <marker date="1519456169000" expanded="true" signature="8220:8227" ph="×" />
+                <marker date="1520172975000" expanded="true" signature="8220:8227" ph="×" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HouseService.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="HouseService.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/services/HouseService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
-              <caret line="323" column="53" selection-start-line="323" selection-start-column="53" selection-end-line="323" selection-end-column="53" />
+            <state relative-caret-position="247">
+              <caret line="290" column="0" selection-start-line="290" selection-start-column="0" selection-end-line="290" selection-end-column="0" />
               <folding>
                 <element signature="e#582#3319#0#PHP" expanded="false" />
                 <element signature="e#3325#4706#0#PHP" expanded="false" />
@@ -180,8 +180,8 @@
         <option value="$PROJECT_DIR$/services/UserService.php" />
         <option value="$PROJECT_DIR$/config/db.php" />
         <option value="$PROJECT_DIR$/web/m/js/common.js" />
-        <option value="$PROJECT_DIR$/web/m/js/release.js" />
         <option value="$PROJECT_DIR$/services/HouseService.php" />
+        <option value="$PROJECT_DIR$/web/m/js/release.js" />
       </list>
     </option>
   </component>
@@ -586,7 +586,7 @@
       <workItem from="1519465020209" duration="9523000" />
       <workItem from="1520066321545" duration="763000" />
       <workItem from="1520147817865" duration="1063000" />
-      <workItem from="1520169600064" duration="1766000" />
+      <workItem from="1520169600064" duration="2084000" />
     </task>
     <task id="LOCAL-00001" summary="添加图片">
       <created>1500205810113</created>
@@ -599,7 +599,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="911086000" />
+    <option name="totallyTimeSpent" value="911404000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="23" width="1280" height="709" extended-state="0" />
@@ -1004,19 +1004,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/m/js/release.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="469" column="36" selection-start-line="469" selection-start-column="36" selection-end-line="469" selection-end-column="36" />
-          <folding>
-            <element signature="e#6134#7599#0" expanded="false" />
-            <element signature="n#!!block;n#previewImage#0" expanded="false" />
-            <element signature="n#!!block;n#addMoveEventForImgUl#0" expanded="false" />
-            <marker date="1519456169000" expanded="true" signature="8220:8227" ph="×" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controllers/HouseController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -1029,12 +1016,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/services/HouseService.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="323" column="53" selection-start-line="323" selection-start-column="53" selection-end-line="323" selection-end-column="53" />
+        <state relative-caret-position="247">
+          <caret line="290" column="0" selection-start-line="290" selection-start-column="0" selection-end-line="290" selection-end-column="0" />
           <folding>
             <element signature="e#582#3319#0#PHP" expanded="false" />
             <element signature="e#3325#4706#0#PHP" expanded="false" />
             <element signature="e#4798#7111#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/m/js/release.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="463" column="17" selection-start-line="463" selection-start-column="17" selection-end-line="463" selection-end-column="17" />
+          <folding>
+            <element signature="e#6134#7599#0" expanded="false" />
+            <element signature="n#!!block;n#previewImage#0" expanded="false" />
+            <element signature="n#!!block;n#addMoveEventForImgUl#0" expanded="false" />
+            <marker date="1520172975000" expanded="true" signature="8220:8227" ph="×" />
           </folding>
         </state>
       </provider>
