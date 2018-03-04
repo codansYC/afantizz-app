@@ -4,7 +4,7 @@
 var dev = false;
 var debug = false;
 var cityCode = "021" //城市编码,目前只服务上海
-var basicUrl = dev ? "http://devapp.afantizz.com/" : debug ? "http://testapp.afantizz.com/" : "http://afantizz.com/"
+var basicUrl = dev ? "http://devapp.afantizz.com/" : debug ? "http://testapp.afantizz.com/" : "http://app.afantizz.com/"
 var imageUrl = dev ? "http://devimg.afantizz.com/" : debug ? "http://testimg.afantizz.com/" : "http://img.afantizz.com/"
 
 $(function () {
