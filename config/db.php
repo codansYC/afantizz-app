@@ -1,7 +1,7 @@
 <?php
 
 $dev = false;
-$debug = true;
+$debug = false;
 
 $devDB = [
     'class' => 'yii\db\Connection',
