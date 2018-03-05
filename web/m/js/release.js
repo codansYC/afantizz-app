@@ -461,7 +461,7 @@ function release(subways,traffics) {
     if (url_token == null || url_token == "") {
         token = getToken()
     }
-    
+
     //所有参数
     var params = {
             token: token,
