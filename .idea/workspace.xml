@@ -100,8 +100,8 @@
       <file leaf-file-name="db.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config/db.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="24" column="27" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
+            <state relative-caret-position="248">
+              <caret line="20" column="7" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -199,8 +199,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="158" />
-    <option name="y" value="23" />
+    <option name="x" value="100" />
+    <option name="y" value="205" />
     <option name="width" value="1280" />
     <option name="height" value="709" />
   </component>
@@ -591,7 +591,7 @@
       <workItem from="1520147817865" duration="1063000" />
       <workItem from="1520169600064" duration="2084000" />
       <workItem from="1520588798302" duration="1029000" />
-      <workItem from="1520684830923" duration="8401000" />
+      <workItem from="1520684830923" duration="8670000" />
     </task>
     <task id="LOCAL-00001" summary="添加图片">
       <created>1500205810113</created>
@@ -604,10 +604,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="922481000" />
+    <option name="totallyTimeSpent" value="922750000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="158" y="23" width="1280" height="709" extended-state="0" />
+    <frame x="100" y="205" width="1280" height="709" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26817447" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
@@ -1033,8 +1033,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/db.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="24" column="27" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
+        <state relative-caret-position="248">
+          <caret line="20" column="7" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
           <folding />
         </state>
       </provider>
