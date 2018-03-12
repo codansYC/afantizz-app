@@ -6,6 +6,7 @@ defined('YII_ENV') or define('YII_ENV', 'dev');
 
 $network=['\='];
 preg_match('/HOSTNAME=(.*)/', file_get_contents('/etc/sysconfig/network'), $network);
+var_dump($network);eixt;
 $hostname = explode('\=',$network[0]);
 if($hostname[1] == 'iZ946wpz3z7Z' ){
     $_SERVER['RUNTIME_ENV'] = 'dev';
