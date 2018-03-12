@@ -22,7 +22,7 @@ $DB = [
     'class' => 'yii\db\Connection',
     'dsn' => 'mysql:host=localhost;dbname=afantizz',
     'username' => 'root',
-    'password' => '',
+    'password' => '123456',
     'charset' => 'utf8',
 ];
 
