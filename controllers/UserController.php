@@ -18,6 +18,9 @@ class UserController extends BaseController{
         try{
             $token = $this->requestParam['token'];
             $user = UserService::getUserByToken($token);
+            if (!$user) {
+                UtilHelper::echoExitResult(BizConsts::SUCCESS,BizConsts::SUCCESS_MSG);
+            }
             $userInfo = ['phone' => $user->phone, 'wx' => $user->wx];
             UtilHelper::echoResult(BizConsts::SUCCESS,BizConsts::SUCCESS_MSG,$userInfo);
         }catch (\Exception $e){
