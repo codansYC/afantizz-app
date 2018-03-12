@@ -37,7 +37,7 @@
         <entry file="file://$PROJECT_DIR$/web/index.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
-              <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+              <caret line="8" column="56" selection-start-line="8" selection-start-column="56" selection-end-line="8" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -605,7 +605,7 @@
       <workItem from="1520147817865" duration="1063000" />
       <workItem from="1520169600064" duration="2084000" />
       <workItem from="1520588798302" duration="1029000" />
-      <workItem from="1520684830923" duration="4657000" />
+      <workItem from="1520684830923" duration="5089000" />
     </task>
     <task id="LOCAL-00001" summary="添加图片">
       <created>1500205810113</created>
@@ -618,7 +618,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="918737000" />
+    <option name="totallyTimeSpent" value="919169000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="90" y="23" width="1280" height="709" extended-state="0" />
@@ -952,7 +952,7 @@
         <state relative-caret-position="1224">
           <caret line="80" column="33" selection-start-line="80" selection-start-column="33" selection-end-line="80" selection-end-column="33" />
           <folding>
-            <element signature="e#117#153#0#PHP" expanded="true" />
+            <element signature="e#117#153#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1047,7 +1047,7 @@
     <entry file="file://$PROJECT_DIR$/web/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+          <caret line="8" column="56" selection-start-line="8" selection-start-column="56" selection-end-line="8" selection-end-column="56" />
           <folding />
         </state>
       </provider>
