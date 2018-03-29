@@ -399,7 +399,7 @@ class HouseService {
 
     static function getShareConfigure($houseId) {
         $house = House::find()
-            ->select('title','house_desc')
+            ->select(['title','house_desc'])
             ->where(['house_id' => $houseId])
             ->one();
         $configure = [

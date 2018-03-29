@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4742c39-c67e-4271-99a6-6a1d583063ac" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/HouseController.php" afterPath="$PROJECT_DIR$/controllers/HouseController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/services/HouseService.php" afterPath="$PROJECT_DIR$/services/HouseService.php" />
     </list>
     <ignored path="afantizz.iws" />
@@ -64,21 +63,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HouseController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="HouseController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/HouseController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="316">
-              <caret line="174" column="69" selection-start-line="174" selection-start-column="69" selection-end-line="174" selection-end-column="69" />
+              <caret line="174" column="53" selection-start-line="174" selection-start-column="53" selection-end-line="174" selection-end-column="53" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HouseService.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="HouseService.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/services/HouseService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="401">
-              <caret line="411" column="26" selection-start-line="411" selection-start-column="26" selection-end-line="411" selection-end-column="26" />
+            <state relative-caret-position="213">
+              <caret line="401" column="43" selection-start-line="401" selection-start-column="43" selection-end-line="401" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -192,8 +191,8 @@
         <option value="$PROJECT_DIR$/web/m/js/common.js" />
         <option value="$PROJECT_DIR$/controllers/UserController.php" />
         <option value="$PROJECT_DIR$/config/params.php" />
-        <option value="$PROJECT_DIR$/services/HouseService.php" />
         <option value="$PROJECT_DIR$/controllers/HouseController.php" />
+        <option value="$PROJECT_DIR$/services/HouseService.php" />
       </list>
     </option>
   </component>
@@ -474,7 +473,7 @@
       <workItem from="1520588798302" duration="1029000" />
       <workItem from="1520684830923" duration="10938000" />
       <workItem from="1521272170006" duration="784000" />
-      <workItem from="1522295488415" duration="1256000" />
+      <workItem from="1522295488415" duration="1810000" />
     </task>
     <task id="LOCAL-00001" summary="添加图片">
       <created>1500205810113</created>
@@ -487,7 +486,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="927058000" />
+    <option name="totallyTimeSpent" value="927612000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-35" y="24" width="1280" height="709" extended-state="0" />
@@ -899,18 +898,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/services/HouseService.php">
+    <entry file="file://$PROJECT_DIR$/controllers/HouseController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="411" column="26" selection-start-line="411" selection-start-column="26" selection-end-line="411" selection-end-column="26" />
+        <state relative-caret-position="316">
+          <caret line="174" column="53" selection-start-line="174" selection-start-column="53" selection-end-line="174" selection-end-column="53" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/HouseController.php">
+    <entry file="file://$PROJECT_DIR$/services/HouseService.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="174" column="69" selection-start-line="174" selection-start-column="69" selection-end-line="174" selection-end-column="69" />
+        <state relative-caret-position="213">
+          <caret line="401" column="43" selection-start-line="401" selection-start-column="43" selection-end-line="401" selection-end-column="43" />
           <folding />
         </state>
       </provider>
