@@ -6,6 +6,7 @@ if (YII_ENV_DEV || YII_ENV_TEST) { // 测试环境
 	)));
 	defined ( 'APPKEY_IOS' ) or define ( 'APPKEY_IOS', json_encode(array(
 		'1.0.0' => 'EqBAYzVRw2k7FswL',
+        '1.0.1' => 'EqBAYzVRw2k7FswL',
         '1.1.0' => 'testCcmsIam500QiangA',
         '1.1.1' => 'testCcmsIam500QiangA',
         '1.1.2' => 'testCcmsIam500QiangA',
