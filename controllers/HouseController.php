@@ -165,4 +165,17 @@ class HouseController extends BaseController {
             UtilHelper::handleException($e);
         }
     }
+
+    /**
+     * 分享房源
+     */
+    function actionShare() {
+        try {
+            $houseId = $this->requestParam['house_id'];
+            $shareConfig = HouseService::getShareConfigure($houseId);
+            UtilHelper::echoResult(BizConsts::SUCCESS,BizConsts::SUCCESS_MSG,$shareConfig);
+        } catch (\Exception $e) {
+            UtilHelper::handleException($e);
+        }
+    }
 }

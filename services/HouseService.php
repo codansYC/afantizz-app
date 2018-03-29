@@ -397,6 +397,21 @@ class HouseService {
 
     }
 
+    static function getShareConfigure($houseId) {
+        $house = House::find()
+            ->select('title','house_desc')
+            ->where(['house_id' => $houseId])
+            ->one();
+        $configure = [
+            'title' => $house->title,
+            'desc' => $house->house_desc
+        ];
+
+        $imageObj = Image::find()->where(['source_id' => $houseId])->one();
+        $configure['image'] = $imageObj->thumb_url;
+        return $configure;
+    }
+
     static function invalid($val) {
         if (isset($val) && $val != "" && $val != "NaN") {
             return false;
